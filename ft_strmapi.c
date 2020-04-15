@@ -6,7 +6,7 @@
 /*   By: japark <astro9928@o.cnu.ac.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 11:25:03 by japark            #+#    #+#             */
-/*   Updated: 2020/04/11 17:05:06 by japark           ###   ########.fr       */
+/*   Updated: 2020/04/15 17:44:25 by japark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		result[i] = f(i, s[i]);
 		++i;
 	}
-	result[i] == '\0';
+	result[i] = '\0';
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: japark <astro9928@o.cnu.ac.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/11 15:01:35 by japark            #+#    #+#             */
-/*   Updated: 2020/04/14 23:17:25 by japark           ###   ########.fr       */
+/*   Updated: 2020/04/15 17:18:01 by japark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			ft_isprint(int c);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 void		*ft_calloc(size_t elt_count, size_t elt_size);
-char		*ft_strdup(char *s);
+char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(char const *s, char c);
 char		*ft_strjoin(char const *s1, char const *s2);
