@@ -1,42 +1,38 @@
-NAME  = cub3D
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: japark <astro9928@o.cnu.ac.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/02/29 17:17:58 by japark            #+#    #+#              #
+#    Updated: 2020/04/14 22:39:36 by japark           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+NAME = libft.a
 
-INCS = -I./srcs -I./libft -I./mlx
-INCLIB = -Lmlx -lmlx -framework OpenGL -framework Appkit -Llibft -lft
+cc = gcc
 
-LIBFT_D = ./libft
-LIBFT_A = ./libft/libft.a
+CFLAGS = -Wall -Werror -Wextra -Werror -I.
 
-ABBR = cub3d \
-       f01_read_info \
-       f02_read_map \
-       f03_validate_info_map \
-       f04_rearrange_all \
-       f05_set_sprite \
-       f06_run_program \
-       f07_execute_raycasting_loop \
-       f08_set_background \
-       f09_raycast_background \
-       f10_raycast_sprite \
-       f11_take_screenshot
+SRCS = *.c
 
-SRCS = $(addsuffix .c, $(addprefix srcs/, $(ABBR)))
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	make -C $(LIBFT_D)
-	$(CC) $(CFLAGS) $(INCS) -o $(NAME) $(OBJS) $(INCLIB)
+$(NAME):
+	gcc $(CFLAGS) -c $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
-	make -C $(LIBFT_D) clean
-	rm -f $(OBJS) $(B_OBJS) *.bmp
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME) $(BONUS) $(LIBFT_A)
+	rm -f $(NAME)
 
-re: fclean all
+re : fclean all
 
+.PHONY: clean fclean all re
